@@ -7,7 +7,7 @@ Welcome to my portfolio! This project showcases my skills, projects, and experie
   - [Introduction](#introduction)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
-  - [Installation](#installation)
+  - [Local Development](#local-development)
   - [Usage](#usage)
   - [License](#license)
 
@@ -27,28 +27,42 @@ My Portfolio is a React.js application that serves as an online portfolio to sho
 - JavaScript: A programming language for adding interactivity to web applications
 - Style-Components: A CSS framework for creating responsive and mobile-first designs
 - Git: A version control system for tracking changes and collaborating on projects
-- GitHub Pages: A platform for hosting and deploying web applications
 
-## Installation
-To run this portfolio locally, follow these steps:
+## Local Development
 
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/amil101/portfolio
-   ```
-2. Navigate to the project directory:
-   ```bash
+   git clone https://github.com/amil101/portfolio.git
    cd portfolio
    ```
-3. Install the dependencies:
+
+2. Install dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+
+3. Start the development server:
    ```bash
    npm start
    ```
-5. Open your browser and visit: `http://localhost:3000`
+
+4. Open your browser and visit:
+   ```
+   http://localhost:3000
+   ```
+
+The application will automatically reload if you make any changes to the source code.
+
+### Available Scripts
+- `npm start`: Runs the app in development mode
+- `npm test`: Launches the test runner
+- `npm run build`: Builds the app for production
+- `npm run eject`: Ejects from Create React App (one-way operation)
 
 ## Usage
 After installing and running the project locally, you can navigate through the different sections of the portfolio using the navigation menu. Explore the About Me section to learn more about my background and skills. Visit the Projects section to see detailed information about my projects, including descriptions and screenshots. Use the Contact section to send me a message or inquiry.
