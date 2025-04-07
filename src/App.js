@@ -14,6 +14,7 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Certifications from "./components/Certifications";
 import ProjectDetails from "./components/ProjectDetails";
+import ThemeToggle from "./components/ThemeToggle";
 import styled from "styled-components";
 
 const Body = styled.div`
@@ -27,13 +28,22 @@ const Wrapper = styled.div`
   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `
+
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme === 'dark' : true;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  console.log(openModal)
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Router >
+      <Router>
         <Navbar />
         <Body>
           <HeroSection />
@@ -42,8 +52,8 @@ function App() {
             <Experience />
           </Wrapper>
           <Wrapper>
+          <Certifications />
             <Education />
-            <Certifications />
           </Wrapper>
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
@@ -53,6 +63,7 @@ function App() {
           {openModal.state &&
             <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
           }
+          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </Body>
       </Router>
     </ThemeProvider>
