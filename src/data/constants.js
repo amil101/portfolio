@@ -8,7 +8,7 @@ export const Bio = {
     "AI Engineer",
   ],
   description:
-    "Software Engineer with 7+ years of experience in backend and full-stack development, specializing in Golang, JavaScript, React and cloud-native solutions. Skilled in designing scalable architectures, microservices, and API integrations using GCP, Kubernetes, and Terraform to build robust, production-ready systems.",
+    "Software Engineer with 8+ years of experience in backend and full-stack development, specializing in Golang, JavaScript, React and cloud-native solutions. Skilled in designing scalable architectures, microservices, and API integrations using GCP, Kubernetes, and Terraform to build robust, production-ready systems.",
   github: "https://github.com/amilshanaka",
   resume: "https://flowcv.com/resume/7kf39gj863",
   linkedin: "https://www.linkedin.com/in/amilshanaka/",
