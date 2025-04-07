@@ -41,10 +41,12 @@ function App() {
             <Skills />
             <Experience />
           </Wrapper>
+          <Wrapper>
+            <Education />
+            <Certifications />
+          </Wrapper>
           <Projects openModal={openModal} setOpenModal={setOpenModal} />
           <Wrapper>
-          <Certifications />
-            <Education />
             <Contact />
           </Wrapper>
           <Footer />

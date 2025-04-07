@@ -1,10 +1,11 @@
 export const Bio = {
   name: "Amil Vithanage",
   roles: [
+    "Full Stack Developer",
     "Software Engineer",
     "Backend Developer",
-    "Full Stack Developer",
-    "Cloud Engineer",
+    "DevOps Engineer",
+    "AI Engineer",
   ],
   description:
     "Software Engineer with 7+ years of experience in backend and full-stack development, specializing in Golang, JavaScript, React and cloud-native solutions. Skilled in designing scalable architectures, microservices, and API integrations using GCP, Kubernetes, and Terraform to build robust, production-ready systems.",
@@ -33,17 +34,33 @@ export const skills = [
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
       },
       {
-        name: "Node.js",
-        image: "https://nodejs.org/static/images/logo.svg",
+        name: "Java",
+        image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
       },
+      {
+        name: "Kotlin",
+        image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg",
+      }
     ],
   },
   {
-    title: "Cloud Platforms",
+    title: "Cloud Platforms & Infrastructure",
     skills: [
       {
         name: "Google Cloud Platform",
         image: "https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png",
+      },
+      {
+        name: "Kubernetes",
+        image: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg",
+      },
+      {
+        name: "Docker",
+        image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
+      },
+      {
+        name: "Terraform",
+        image: "https://cdn.prod.website-files.com/6340ceb04078362242dd4eb9/636131fe1f44d41e7af2eb78_terraform-logo.png",
       },
     ],
   },
@@ -52,7 +69,7 @@ export const skills = [
     skills: [
       {
         name: "ArangoDB",
-        image: "https://www.arangodb.com/wp-content/uploads/2018/10/ArangoDB-Logo.png",
+        image: "https://upload.wikimedia.org/wikipedia/en/3/3a/ArangoDB_Logo.png",
       },
       {
         name: "PostgreSQL",
@@ -63,8 +80,16 @@ export const skills = [
         image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
       },
       {
-        name: "SQL",
-        image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png",
+        name: "Oracle",
+        image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg",
+      },
+      {
+        name: "Cassandra",
+        image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cassandra/cassandra-original-wordmark.svg",
+      },
+      {
+        name: "Elastic Search",
+        image: "https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg",
       },
     ],
   },
@@ -76,30 +101,18 @@ export const skills = [
         image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
       },
       {
-        name: "Next.js",
-        image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR4Ab1XAaQqURB9DyohSykREpRIQSAlBCoECKUFCSRCBBEAaSEABQEoCIEASCwAUICALgCo83do0//9v819XX845O7VnDkzOzP7JWGaBd3C3IJpQVjAHeJ+Rs9a97vKLGrBsB1KgMhEP3FMUUwt4ENMfxr1yQIU4SSjRkbeOZtERmHk6pXQVDlnkHh9S+QLTm1hkiz4n/gzFQuny9FoFLquE+i34x+n02k0m00UCoV3BIzn3MMJrVYLtp1OJ0cS/X4f5/MZhmG8IyDsWtDfEaDIn2232/3zbrvdxuFwwGg04qRBt+VnETBNE0IIkE2n07/erdfrWK/X6Ha73Hb9ZXII3G43ivy3dNRqtZe7lUoFs9mM6oBDwCQCgquALT1FT3a5XF7qIZ/PYzgcolqtcggIIgBZAgRKB6lCRalp2uM8k8mAVMrlchwC+DEBipycE4n5fP44j8ViKJVKSCaTbAJCpgaez4vFIsjoWa/XA50FAgEkEgmEw2F2CkxZBZ5Br5tt1ITcbjd8Ph88Hg+7CBefECCsVitS4aVJcV9D/VMCVITk/Hq9YrPZyBBo2a1YMGvAcQYcj0cCtWMugcdYNhjDiBrP25mx3++x3W6RzWZZ8isfxzQLlsslJpMJpYY5jhkqcOH1ejEYDDAej9FoNOByuZxGsfqVzC7KTqcDSkkqleKsZOqX0mAwiHK5DGrJfr+fs5SqX8sjkQji8ThCoRC+v78Za7l6JagrUh3YkUuZpqgwDaecc9VYSDoV5Fg+at7n+eLN57kuE/EvzHr/Kvs31aYAAAAASUVORK5CYII=",
-      },
-      {
         name: "Angular",
         image: "https://angular.io/assets/images/logos/angular/angular.svg",
       },
+      {
+        name: "NextJS",
+        image: "https://miro.medium.com/v2/resize:fit:1400/1*gxOA6-EF8P8vnYdk3Bc9bg.png",
+      }
     ],
   },
   {
-    title: "DevOps & Infrastructure",
+    title: "DevOps & CI/CD",
     skills: [
-      {
-        name: "Docker",
-        image: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      },
-      {
-        name: "Kubernetes",
-        image: "https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg",
-      },
-      {
-        name: "Terraform",
-        image: "https://www.terraform.io/assets/images/og-image-8b3e4f7d.png",
-      },
       {
         name: "GitHub",
         image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
@@ -110,12 +123,12 @@ export const skills = [
       },
       {
         name: "Buildkite",
-        image: "https://buildkite.com/logo.svg",
+        image: "https://w7.pngwing.com/pngs/142/623/png-transparent-buildkite-hd-logo-thumbnail.png",
       },
       {
         name: "Jenkins",
         image: "https://www.jenkins.io/images/logos/jenkins/jenkins.svg",
-      },
+      }
     ],
   },
   {
@@ -131,11 +144,15 @@ export const skills = [
       },
       {
         name: "Google Pub/Sub",
-        image: "https://cloud.google.com/pubsub/images/pubsub-logo.svg",
+        image: "https://cdn.worldvectorlogo.com/logos/google-cloud-pub-sub-logo.svg",
       },
       {
         name: "Kafka",
         image: "https://kafka.apache.org/images/apache-kafka.png",
+      },
+      {
+        name: "ZooKeeper",
+        image: "https://zookeeper.apache.org/images/zookeeper_small.gif",
       },
     ],
   },
@@ -144,11 +161,11 @@ export const skills = [
     skills: [
       {
         name: "GCP Logging",
-        image: "https://cloud.google.com/logging/images/stackdriver-logging.svg",
+        image: "https://files.readme.io/2e5891d-gcp-logging.png",
       },
       {
         name: "Sentry",
-        image: "https://sentry-brand.storage.googleapis.com/sentry-logo-black.png",
+        image: "https://images.seeklogo.com/logo-png/39/1/sentry-logo-png_seeklogo-394621.png",
       },
       {
         name: "Grafana",
@@ -160,12 +177,33 @@ export const skills = [
       },
     ],
   },
+  {
+    title: "Testing & Quality Assurance",
+    skills: [
+      {
+        name: "Pact",
+        image: "https://pact.io/assets/img/logo-black.png",
+      },
+      {
+        name: "JUnit",
+        image: "https://junit.org/junit5/assets/img/junit5-logo.png",
+      },
+      {
+        name: "Jasmine",
+        image: "https://static-00.iconduck.com/assets.00/file-type-jasmine-icon-256x256-n2ukib9q.png",
+      },
+      {
+        name: "Karma",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR82IT0afXNHcS6jS1UJd0SvrEP52tft5l8axiDHh8ldKvTrfswOQCHURtRAj4N8Co7pMQ&usqp=CAU",
+      }
+    ],
+  },
 ];
 
 export const experiences = [
   {
     id: 0,
-    img: "https://thirdfort.com/wp-content/uploads/2021/09/Thirdfort-Logo.svg",
+    img: "https://media.licdn.com/dms/image/v2/D4E0BAQHDF7xX1fGQ2A/company-logo_200_200/company-logo_200_200/0/1697720411050/thirdfort_logo?e=2147483647&v=beta&t=JQo-Nd339SRHaUQ5cvq-9Uf-OOnYqmJnq_sFAKMq5Tg",
     role: "Software Engineer II",
     company: "Thirdfort Limited",
     date: "06/2020 – Present",
@@ -196,7 +234,7 @@ export const experiences = [
   },
   {
     id: 1,
-    img: "https://www.persistent.com/wp-content/uploads/2021/09/Persistent-Systems-Logo.svg",
+    img: "https://www.bigdatawire.com/wp-content/uploads/2024/01/persistent-systems-logo-6DDF70EF79-seeklogo.com_.png",
     role: "Senior Software Engineer",
     company: "Persistent Systems",
     date: "06/2019 – 06/2020",
@@ -221,7 +259,7 @@ export const experiences = [
   },
   {
     id: 2,
-    img: "https://www.ge.com/sites/default/files/ge-logo.png",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/General_Electric_logo.svg/1200px-General_Electric_logo.svg.png",
     role: "Software Engineer",
     company: "GE Transportation",
     date: "04/2017 – 06/2019",
@@ -246,7 +284,7 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://uom.lk/sites/default/files/logo.png",
+    img: "https://online.uom.lk/pluginfile.php/1/theme_moove/logo/1740989179/University_of_Moratuwa_logo.png",
     school: "University of Moratuwa",
     date: "02/2013 – 04/2017",
     grade: "Bachelor of Science (Hons) Computer Science & Engineering",
@@ -255,7 +293,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://rahulacollege.lk/wp-content/uploads/2021/08/rahula-college-logo.png",
+    img: "https://images.seeklogo.com/logo-png/51/1/rahula-college-logo-png_seeklogo-514915.png",
     school: "Rahula College",
     date: "02/2002 – 08/2011",
     grade: "G.C.E Advanced Level",
@@ -270,7 +308,7 @@ export const projects = [
     title: "New Message Gateway",
     date: "Jun 2019 - Present",
     description: "A high-performance message gateway system designed to control and manage messages with enhanced concurrency and robustness. The system handles high-volume message processing with improved reliability and scalability.",
-    image: "https://www.persistent.com/wp-content/uploads/2021/09/Persistent-Systems-Logo.svg",
+    image: "https://www.omnitracker.com/assets/images/01_Products/Interfaces/01_Email/Funktionsweise_E-mail_Gateway_OMNITRACKER__ScaleWidthWzExNzBd.png",
     tags: [
       "Golang",
       "Apache Kafka",
@@ -290,125 +328,10 @@ export const projects = [
   },
   {
     id: 1,
-    title: "TMS Lite & RMS Lite",
-    date: "Apr 2018 - Jun 2019",
-    description: "Comprehensive transportation and revenue management systems for railroad operations. TMS controls yard, inventory, waybills, train movements, switching, demurrage, and billing. RMS automates the rating process and optimizes revenue management performance.",
-    image: "https://www.ge.com/sites/default/files/ge-logo.png",
-    tags: [
-      "Kotlin",
-      "Spring-Boot",
-      "Apache Kafka",
-      "ZooKeeper",
-      "Elastic Search",
-      "AWS",
-      "Git",
-      "Microservices",
-      "Data Processing"
-    ],
-    category: "Transportation Management",
-    achievements: [
-      "Developed comprehensive railroad management system",
-      "Automated rating and revenue management processes",
-      "Improved operational efficiency and data accuracy"
-    ]
-  },
-  {
-    id: 2,
-    title: "TMS Modernization",
-    date: "Jan 2018 - Mar 2018",
-    description: "Modernization of the Transportation Management System with enhanced features for yard, inventory, waybills, train movements, switching, demurrage, and billing management. Implemented using modern microservices architecture.",
-    image: "https://www.ge.com/sites/default/files/ge-logo.png",
-    tags: [
-      "Java",
-      "Spring-Boot",
-      "Microservices",
-      "Predix Cloud",
-      "PostgreSQL",
-      "Docker",
-      "Gradle",
-      "Angular",
-      "Testing Frameworks"
-    ],
-    category: "System Modernization",
-    achievements: [
-      "Successfully migrated legacy system to microservices architecture",
-      "Implemented comprehensive testing framework",
-      "Enhanced system scalability and maintainability"
-    ]
-  },
-  {
-    id: 3,
-    title: "Command",
-    date: "Apr 2017 - Dec 2017",
-    description: "Legacy program modernization and maintenance. Involved in code debugging, bug solving, and automating the QA deployment process for improved system reliability.",
-    image: "https://www.ge.com/sites/default/files/ge-logo.png",
-    tags: [
-      "Java",
-      "Hibernate",
-      "Struts",
-      "JSP",
-      "Oracle",
-      "Tomcat",
-      "Jenkins",
-      "Ant",
-      "SVN",
-      "Git"
-    ],
-    category: "System Maintenance",
-    achievements: [
-      "Improved system stability through bug fixes",
-      "Automated QA deployment process",
-      "Enhanced code quality and maintainability"
-    ]
-  },
-  {
-    id: 4,
-    title: "PTZ Security Camera",
-    date: "Jun 2015 - Present",
-    description: "Intelligent security camera system using Raspberry Pi and image processing. Features person recognition, tracking of unknown individuals, and automated pan/tilt/zoom functionality. Particularly useful for employee monitoring and security in corporate environments.",
-    image: "https://uom.lk/sites/default/files/logo.png",
-    tags: [
-      "Raspberry Pi",
-      "Image Processing",
-      "Python",
-      "OpenCV",
-      "Computer Vision",
-      "Hardware Integration"
-    ],
-    category: "IoT & Security",
-    achievements: [
-      "Developed person recognition and tracking system",
-      "Implemented automated camera control system",
-      "Created efficient employee monitoring solution"
-    ]
-  },
-  {
-    id: 5,
-    title: "Bridge Health Monitoring System",
-    date: "Feb 2015 - Present",
-    description: "Arduino-based system for real-time bridge health monitoring. Uses accelerometer sensors and Wi-Fi shield to measure vibrations (14 samples/second) and calculate bridge health indices, enabling prioritization of maintenance and repairs.",
-    image: "https://uom.lk/sites/default/files/logo.png",
-    tags: [
-      "Arduino",
-      "Accelerometer",
-      "Wi-Fi",
-      "IoT",
-      "Data Analysis",
-      "Real-time Monitoring"
-    ],
-    category: "IoT & Infrastructure",
-    achievements: [
-      "Developed real-time vibration monitoring system",
-      "Created bridge health index calculation algorithm",
-      "Implemented wireless data transmission system"
-    ]
-  },
-  {
-    id: 6,
     title: "Student Management System",
     date: "Oct 2014 - Present",
     description: "Comprehensive system for managing private tuition provider's student database. Features test mark analysis and monthly performance reporting capabilities.",
-    image: "https://uom.lk/sites/default/files/logo.png",
+    image: "https://images.tpointtech.com/blog/images/student-management-system.png",
     tags: [
       "Java",
       "Database Management",
@@ -424,11 +347,11 @@ export const projects = [
     ]
   },
   {
-    id: 7,
+    id: 2,
     title: "Personal Assistant",
     date: "Aug 2014 - Present",
     description: "Android-based personal assistant application with advanced database management features. Includes location-based reminders and automated SMS functionality for enhanced productivity.",
-    image: "https://uom.lk/sites/default/files/logo.png",
+    image: "https://www.lbtc.co.uk/wp-content/uploads/2020/05/personal-assistant-1-1.png",
     tags: [
       "Android",
       "Android Studio",
@@ -442,27 +365,6 @@ export const projects = [
       "Implemented location-based reminder system",
       "Developed automated SMS functionality",
       "Created efficient database management system"
-    ]
-  },
-  {
-    id: 8,
-    title: "Aqua Challenge",
-    date: "Mar 2014 - Present",
-    description: "Arduino-based water quality monitoring system. Measures water clarity, level, and pH in real-time using Wi-Fi connectivity for remote monitoring of water tanks.",
-    image: "https://uom.lk/sites/default/files/logo.png",
-    tags: [
-      "Arduino",
-      "Wi-Fi",
-      "Water Quality",
-      "IoT",
-      "Real-time Monitoring",
-      "Sensors"
-    ],
-    category: "IoT & Environmental",
-    achievements: [
-      "Developed water quality monitoring system",
-      "Implemented real-time data transmission",
-      "Created efficient water tank monitoring solution"
     ]
   }
 ];
@@ -478,7 +380,7 @@ export const TimeLineData = [
 export const certifications = [
     {
         id: 0,
-        img: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
+        img: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg",
         school: "Udemy",
         date: "03/2025",
         grade: "GCP Professional Cloud Architect",
@@ -487,21 +389,21 @@ export const certifications = [
     },
     {
         id: 1,
-        img: "https://www.goodagile.com/wp-content/uploads/2021/03/goodagile-logo.png",
+        img: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy-inverted.svg",
+        school: "Udemy",
+        date: "02/2025",
+        grade: "LLM Engineering: Master AI, Large Language Models & Agents",
+        desc: "Advanced certification in Large Language Models and AI engineering",
+        link: "https://www.udemy.com/certificate/UC-013fb134-b9cd-488e-97ca-31dc8103a949/"
+    },
+    {
+        id: 2,
+        img: "https://www.goodagile.com/images/galogo_fullsize.png",
         school: "GoodAgile",
         date: "12/2023",
         grade: "Certified Scrum Master (CSM)",
         desc: "Professional certification in Scrum methodology and agile project management",
         link: "https://www.linkedin.com/company/goodagile/"
-    },
-    {
-        id: 2,
-        img: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
-        school: "Udemy",
-        date: "02/2024",
-        grade: "LLM Engineering: Master AI, Large Language Models & Agents",
-        desc: "Advanced certification in Large Language Models and AI engineering",
-        link: "https://www.udemy.com/certificate/UC-013fb134-b9cd-488e-97ca-31dc8103a949/"
     }
 ].sort((a, b) => {
     // Convert dates to comparable format (MM/YYYY)
