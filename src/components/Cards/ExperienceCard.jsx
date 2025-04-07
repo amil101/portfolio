@@ -28,7 +28,7 @@ const Span = styled.span`
 overflow: hidden;
 display: -webkit-box;
 max-width: 100%;
--webkit-line-clamp: 4;
+-webkit-line-clamp: 3;
 -webkit-box-orient: vertical;
 text-overflow: ellipsis;
 `
@@ -36,7 +36,7 @@ text-overflow: ellipsis;
 const Card = styled.div`
     width: 650px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
     padding: 12px 16px;
     justify-content: space-between;
     position: relative;
@@ -45,7 +45,8 @@ const Card = styled.div`
     flex-direction: column;
     gap: 12px;
     transition: all 0.3s ease-in-out;
-    &:hover{
+    cursor: pointer;
+    &:hover {
         box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
         transform: translateY(-5px);
     }
@@ -54,6 +55,7 @@ const Card = styled.div`
         gap: 8px;
         width: 300px;
     }
+    border: 0.1px solid #854CE6;
 
     &:hover ${Document}{
         display: flex;
@@ -62,11 +64,7 @@ const Card = styled.div`
     &:hover ${Span}{
         overflow: visible;
         -webkit-line-clamp: unset;
-
     }
-
-    border: 0.1px solid #306EE8;
-    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 `
 
 const Top = styled.div`
@@ -91,11 +89,10 @@ const Body = styled.div`
     flex-direction: column; 
 `
 
-
 const Role = styled.div`
     font-size: 18px;
     font-weight: 600;
-    color: ${({ theme }) => theme.text_primary + 99};
+    color: ${({ theme }) => theme.text_primary};
     @media only screen and (max-width: 768px){
         font-size: 14px;
     }
@@ -104,7 +101,7 @@ const Role = styled.div`
 const Company = styled.div`
     font-size: 14px;
     font-weight: 500;
-    color: ${({ theme }) => theme.text_secondary + 99};
+    color: ${({ theme }) => theme.text_secondary};
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }
@@ -118,7 +115,6 @@ const Date = styled.div`
         font-size: 10px;
     }
 `
-
 
 const Skills = styled.div`
     width: 100%;
@@ -142,11 +138,20 @@ const Skill = styled.div`
     }
 `
 
+const MoreButton = styled.div`
+    font-size: 14px;
+    font-weight: 500;
+    color: #854CE6;
+    text-align: right;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+`
 
-
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = ({ experience, onClick }) => {
     return (
-        <Card>
+        <Card onClick={onClick}>
             <Top>
                 <Image src={experience.img} />
                 <Body>
@@ -156,10 +161,7 @@ const ExperienceCard = ({ experience }) => {
                 </Body>
             </Top>
             <Description>
-                {experience?.desc &&
-                    <Span>{experience?.desc}</Span>
-
-                }
+                <Span>{experience.desc}</Span>
                 {experience?.skills &&
                     <>
                         <br />

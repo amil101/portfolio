@@ -33,7 +33,7 @@ max-width: 100%;
 text-overflow: ellipsis;
 `
 
-const Card = styled.div`
+const Card = styled.a`
     width: 650px;
     border-radius: 10px;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
@@ -45,14 +45,14 @@ const Card = styled.div`
     flex-direction: column;
     gap: 12px;
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
     &:hover{
         box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
         transform: translateY(-5px);
     }
-    @media only screen and (max-width: 768px){
-        padding: 10px;
-        gap: 8px;
-        width: 300px;
+    @media (max-width: 960px) {
+        padding: 0px;
     }
 
     &:hover ${Document}{
@@ -62,7 +62,6 @@ const Card = styled.div`
     &:hover ${Span}{
         overflow: visible;
         -webkit-line-clamp: unset;
-
     }
     border: 0.1px solid #854CE6;
 `
@@ -88,7 +87,6 @@ const Body = styled.div`
     display: flex;
     flex-direction: column; 
 `
-
 
 const Name = styled.div`
     font-size: 18px;
@@ -126,20 +124,28 @@ const Grade = styled.div`
     }
 `
 
-
-
 const EducationCard = ({ education }) => {
+    const formatDate = (dateStr) => {
+        if (dateStr.includes('/')) {
+            const [month, year] = dateStr.split('/');
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            return `${monthNames[parseInt(month) - 1]} ${year}`;
+        }
+        return dateStr;
+    };
+
     return (
-        <Card>
+        <Card href={education.link} target="_blank" rel="noopener noreferrer">
             <Top>
                 <Image src={education.img} />
                 <Body>
                     <Name>{education.school}</Name>
-                    <Degree>{education.degree}</Degree>
-                    <Date>{education.date}</Date>
+                    <Degree>{education.degree || education.grade}</Degree>
+                    <Date>{formatDate(education.date)}</Date>
                 </Body>
             </Top>
-            <Grade><b>Grade: </b>{education.grade}</Grade>
+            {education.degree && <Grade><b>Grade: </b>{education.grade}</Grade>}
             <Description>
                 <Span>{education.desc}</Span>
             </Description>

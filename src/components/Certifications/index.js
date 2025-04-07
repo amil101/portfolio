@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -6,9 +6,8 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import ExperienceCard from '../Cards/ExperienceCard';
-import { experiences } from '../../data/constants';
-import ExperienceDetails from './ExperienceDetails';
+import { certifications } from '../../data/constants';
+import EducationCard from '../Cards/EducationCard';
 
 const Container = styled.div`
     display: flex;
@@ -17,7 +16,7 @@ const Container = styled.div`
     position: relative;
     z-index: 1;
     align-items: center;
-    padding: 40px 0px 80px 0px;
+    padding: 0px 0px 60px 0px;
     @media (max-width: 960px) {
         padding: 0px;
     }
@@ -75,51 +74,32 @@ const TimelineSection = styled.div`
     }
 `;
 
-const Experience = () => {
-    const [selectedExperience, setSelectedExperience] = useState(null);
-
-    const handleExperienceClick = (experience) => {
-        setSelectedExperience(experience);
-    };
-
-    const handleCloseModal = () => {
-        setSelectedExperience(null);
-    };
-
+const index = () => {
     return (
-        <Container id="experience">
+        <Container id="certifications">
             <Wrapper>
-                <Title>Experience</Title>
+                <Title>Certifications</Title>
                 <Desc>
-                    My work experience as a software engineer and working on different companies and projects.
+                    My professional certifications that demonstrate my expertise and commitment to continuous learning.
                 </Desc>
                 <TimelineSection>
                     <Timeline>
-                        {experiences.map((experience, index) => (
-                            <TimelineItem key={experience.id}>
+                        {certifications.map((certification, index) => (
+                            <TimelineItem key={index}>
+                                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                    <EducationCard education={certification}/>
+                                </TimelineContent>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}
+                                    {index !== certifications.length - 1 && <TimelineConnector style={{ background: '#854CE6' }} />}
                                 </TimelineSeparator>
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <ExperienceCard
-                                        experience={experience}
-                                        onClick={() => handleExperienceClick(experience)}
-                                    />
-                                </TimelineContent>
                             </TimelineItem>
                         ))}
                     </Timeline>
                 </TimelineSection>
             </Wrapper>
-            {selectedExperience && (
-                <ExperienceDetails
-                    experience={selectedExperience}
-                    onClose={handleCloseModal}
-                />
-            )}
         </Container>
-    );
-};
+    )
+}
 
-export default Experience;
+export default index 
