@@ -88,7 +88,7 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Amil Vithanage</Logo>
+        <Logo>{Bio.name}</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
@@ -104,7 +104,7 @@ function Footer() {
           <SocialMediaIcon href={Bio.insta} target="display"><InstagramIcon /></SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>
-          &copy; 2025 Amil Vithanage. All rights reserved.
+          &copy; 2025 {Bio.name}. All rights reserved.
         </Copyright>
 
       </FooterWrapper>

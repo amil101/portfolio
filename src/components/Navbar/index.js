@@ -3,6 +3,7 @@ import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, B
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Bio } from '../../data/constants';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -12,7 +13,11 @@ const Navbar = () => {
       <NavbarContainer>
         <NavLogo>
           <Link to="/" style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer', textDecoration: 'none' }}>
-            <DiCssdeck size="3rem" /> <Span>Amil Vithanage</Span>
+            <DiCssdeck size="3rem" color="#854CE6" /> 
+            <Span>
+              <span style={{ color: "black", WebkitTextStroke: "1px white" }}>Amil</span> 
+              <span style={{ color: "white", WebkitTextStroke: "1px black" }}> Vithanage</span>
+            </Span>
           </Link>
         </NavLogo>
         <MobileIcon>
