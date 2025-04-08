@@ -88,7 +88,7 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>{Bio.name}</Logo>
+        {/* <Logo>{Bio.name}</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#skills">Skills</NavLink>
@@ -96,7 +96,7 @@ function Footer() {
           <NavLink href="#certifications">Certifications</NavLink>
           <NavLink href="#education">Education</NavLink>
           <NavLink href="#projects">Projects</NavLink>
-        </Nav>
+        </Nav> */}
         <SocialMediaIcons>
           <SocialMediaIcon href={Bio.facebook} target="display"><FacebookIcon /></SocialMediaIcon>
           <SocialMediaIcon href={Bio.twitter} target="display"><TwitterIcon /></SocialMediaIcon>
