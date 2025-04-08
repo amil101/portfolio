@@ -1,11 +1,9 @@
 export const Bio = {
   name: "Amil Vithanage",
   roles: [
+    "Senior Software Engineer",
     "Full Stack Developer",
-    "Software Engineer",
-    "Backend Developer",
-    "DevOps Engineer",
-    "AI Engineer",
+    "AI Enthusiast",
   ],
   description:
     "Software Engineer with 8+ years of experience in backend and full-stack development, specializing in Golang, JavaScript, React and cloud-native solutions. Skilled in designing scalable architectures, microservices, and API integrations using GCP, Kubernetes, and Terraform to build robust, production-ready systems.",
