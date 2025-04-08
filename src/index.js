@@ -1,10 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from './utils/Themes'; // Make sure you have your theme file
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <ThemeProvider theme={darkTheme}>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 

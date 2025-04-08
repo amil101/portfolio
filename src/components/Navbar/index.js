@@ -1,63 +1,48 @@
-import React from 'react'
-import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink } from './NavbarStyledComponent'
+import React from 'react';
+import { Nav, NavLink, NavbarContainer, Span, NavLogo, NavItems, GitHubButton, ButtonContainer, MobileIcon, MobileMenu, MobileLink } from './NavbarStyledComponent';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to='/'>
-          <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
+        <NavLogo>
+          <Link to="/" style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer', textDecoration: 'none' }}>
             <DiCssdeck size="3rem" /> <Span>Amil Vithanage</Span>
-          </a>
+          </Link>
         </NavLogo>
         <MobileIcon>
-          <FaBars onClick={() => {
-            setIsOpen(!isOpen)
-          }} />
+          <FaBars onClick={() => setIsOpen(!isOpen)} />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href='#skills'>Skills</NavLink>
-          <NavLink href='#experience'>Experience</NavLink>
-          <NavLink href='#certifications'>Certifications</NavLink>
-          <NavLink href='#education'>Education</NavLink>
-          <NavLink href='#projects'>Projects</NavLink>
+          <NavLink as={Link} to="/skills">Skills</NavLink>
+          <NavLink as={Link} to="/experience">Experience</NavLink>
+          <NavLink as={Link} to="/certifications">Certifications</NavLink>
+          <NavLink as={Link} to="/education">Education</NavLink>
+          <NavLink as={Link} to="/projects">Projects</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GitHubButton href='#contact'>Contact Me</GitHubButton>
+          <GitHubButton as={Link} to="/contact">Contact Me</GitHubButton>
         </ButtonContainer>
-        {
-          isOpen &&
-          <MobileMenu isOpen={isOpen}>
-            <MobileLink href="#about" onClick={() => {
-              setIsOpen(!isOpen)
-            }}>About</MobileLink>
-            <MobileLink href='#skills' onClick={() => {
-              setIsOpen(!isOpen)
-            }}>Skills</MobileLink>
-            <MobileLink href='#experience' onClick={() => {
-              setIsOpen(!isOpen)
-            }}>Experience</MobileLink>
-            <MobileLink href='#projects' onClick={() => {
-              setIsOpen(!isOpen)
-            }}>Projects</MobileLink>
-            <MobileLink href='#education' onClick={() => {
-              setIsOpen(!isOpen)
-            }}>Education</MobileLink>
-            <MobileLink href='#certifications' onClick={() => {
-              setIsOpen(!isOpen)
-            }}>Certifications</MobileLink>
-            <MobileLink href='#contact' onClick={() => {
-              setIsOpen(!isOpen)
-            }}>Contact Me</MobileLink>
+        {isOpen && (
+          <React.Fragment>
+            <MobileMenu isOpen={isOpen}>
+              <MobileLink as={Link} to="/skills" onClick={() => setIsOpen(false)}>Skills</MobileLink>
+              <MobileLink as={Link} to="/experience" onClick={() => setIsOpen(false)}>Experience</MobileLink>
+              <MobileLink as={Link} to="/projects" onClick={() => setIsOpen(false)}>Projects</MobileLink>
+              <MobileLink as={Link} to="/education" onClick={() => setIsOpen(false)}>Education</MobileLink>
+              <MobileLink as={Link} to="/certifications" onClick={() => setIsOpen(false)}>Certifications</MobileLink>
+              <MobileLink as={Link} to="/contact" onClick={() => setIsOpen(false)}>Contact Me</MobileLink>
             </MobileMenu>
-        }
+          </React.Fragment>
+        )}
       </NavbarContainer>
     </Nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

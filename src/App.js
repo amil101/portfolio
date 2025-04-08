@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { darkTheme, lightTheme } from './utils/Themes.js'
 import Navbar from "./components/Navbar";
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeroSection from "./components/HeroSection";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -30,31 +30,26 @@ const Wrapper = styled.div`
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
 
   useEffect(() => {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
-
-  const [openModal, setOpenModal] = useState({ state: false, project: null });
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
         <Navbar />
         <Body>
-          <HeroSection />
-          <Wrapper>
-            <Skills />
-            <Experience />
-          </Wrapper>
-          <Wrapper>
-          <Certifications />
-            <Education />
-          </Wrapper>
-          <Projects openModal={openModal} setOpenModal={setOpenModal} />
-          <Wrapper>
-            <Contact />
-          </Wrapper>
+          <Routes>
+            <Route path="/" element={<HeroSection />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/projects" element={<Projects openModal={openModal} setOpenModal={setOpenModal} />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
           <Footer />
           {openModal.state &&
             <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
