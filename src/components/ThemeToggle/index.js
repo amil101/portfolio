@@ -14,7 +14,7 @@ const ToggleButton = styled.button`
   padding: 0.5rem;
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem;
   z-index: 999;
   color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

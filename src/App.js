@@ -15,6 +15,7 @@ import Certifications from "./components/Certifications";
 import ProjectDetails from "./components/ProjectDetails";
 import ThemeToggle from "./components/ThemeToggle";
 import styled from "styled-components";
+import ChatBot from "./components/ChatBot";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -55,6 +56,7 @@ function App() {
             <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
           }
           <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          <ChatBot />
         </Body>
       </Router>
     </ThemeProvider>
