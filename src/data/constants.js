@@ -13,6 +13,7 @@ export const Bio = {
   twitter: "",
   insta: "",
   facebook: "",
+  email: "amil.vithanage@gmail.com",
 };
 
 export const skills = [
@@ -365,14 +366,6 @@ export const projects = [
       "Created efficient database management system"
     ]
   }
-];
-
-export const TimeLineData = [
-  { year: 2017, text: "Started career as Software Engineer at GE Transportation" },
-  { year: 2019, text: "Promoted to Senior Software Engineer at Persistent Systems" },
-  { year: 2020, text: "Joined Thirdfort Limited as Software Engineer II" },
-  { year: 2021, text: "Led major system improvements and integrations" },
-  { year: 2022, text: "Achieved significant revenue growth through strategic integrations" },
 ];
 
 export const certifications = [

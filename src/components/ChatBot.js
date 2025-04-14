@@ -4,6 +4,7 @@ import OpenAI from "openai";
 import { BiMessageRoundedDots } from 'react-icons/bi';
 import { IoMdClose } from 'react-icons/io';
 import { IoRemove } from 'react-icons/io5';
+import { fetchNotionData, formatNotionData } from '../utils/notion';
 
 const FloatingContainer = styled.div`
   position: fixed;
@@ -170,12 +171,25 @@ const ChatBot = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [notionData, setNotionData] = useState([]);
   const messagesEndRef = useRef(null);
 
   const openai = new OpenAI({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true
   });
+
+  useEffect(() => {
+    const loadNotionData = async () => {
+      const databaseId = process.env.REACT_APP_NOTION_DATABASE_ID;
+      if (databaseId) {
+        const rawData = await fetchNotionData(databaseId);
+        const formattedData = formatNotionData(rawData);
+        setNotionData(formattedData);
+      }
+    };
+    loadNotionData();
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -199,35 +213,22 @@ const ChatBot = () => {
           {
             role: "system",
             content: `You represent Amil Shanaka in a portfolio chatbot that includes chat history. 
-Be concise. Answer in less than 3 lines.
+Be concise. Answer in less than 3 lines if it's not a behavior question.
 
 Rules:
-- Answer ONLY based on information available in my portfolio data
-- If information is not in the portfolio data, respond with "I prefer not to discuss that" or "That information is not available in my portfolio"
+- Answer ONLY based on information available in my portfolio data and Notion data
+- If information is not in the portfolio data or Notion data, respond with "I prefer not to discuss that" or "That information is not available in my portfolio"
 - Be professional and straightforward
 - Do not make up or assume information
 - Keep responses focused on professional and technical aspects
 - Maintain a friendly but professional tone
+- If the user asks about behavior questions, answer it based on Notion Data using the PREP method
 
-Example Interactions:
-Q: What's your name?
-A: Amil Shanaka.
-
-Q: What's your LinkedIn?
-A: You can find me on LinkedIn at linkedin.com/in/amilshanaka/
-
-Q: What's your favorite food?
-A: I prefer not to discuss that as it's not relevant to my professional portfolio.
-
-Rationale:
-- Only use information that exists in the portfolio data
-- Maintain professional boundaries
-- Be direct and clear in responses
-- Focus on professional qualifications and experiences
-- Protect privacy by not sharing personal information not in the portfolio
-
-Current Context:
+Portfolio Data:
 ${JSON.stringify(require('../data/constants.js'))}
+
+Notion Data:
+${JSON.stringify(notionData)}
 `
           },
           {
